@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <BaseHeader v-if="shouldShowHomeNav" />
+    <OtherHeader v-else />
+    <router-view></router-view>
+    <BaseFooter />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import BaseHeader from "@/components/BaseHeader.vue";
+import OtherHeader from "@/components/OtherHeader.vue";
+import BaseFooter from "@/components/BaseFooter.vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
-    HelloWorld
-  }
-}
+    BaseHeader,
+    BaseFooter,
+    OtherHeader,
+  },
+  computed: {
+    shouldShowHomeNav() {
+      const routes = ["/"];
+      return routes.includes(this.$route.path);
+    },
+  },
+};
 </script>
