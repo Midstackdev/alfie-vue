@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="carousel banner" id="homepage">
+    <div class="carousel banner" id="carousel">
       <div class="arrows">
         <span class="icon button left" n="0">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53">

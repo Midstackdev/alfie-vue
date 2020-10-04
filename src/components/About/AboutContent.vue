@@ -33,7 +33,7 @@
       </p>
     </section>
     <section class="global-reach flex-column align-center">
-      <p class="text container">
+      <h3 class="text container">
         Alfie Designs also stocks a large number of private boutiques in the
         <span style="--color: #002868">United States</span>,
         <span style="--color: #d37111">Nigeria</span>,
@@ -43,12 +43,12 @@
         <span style="--color: #dcd8d4">Kenya</span>,
         <span style="--color: #fd840d">Sierra Leone</span>, and
         <span style="--color: #252525">Mali</span>,
-      </p>
-      <img
+      </h3>
+      <!-- <img
         src="@/assets/images/global-reach.png"
         alt="global map of Alfie Designs' boutiques"
         class="globe"
-      />
+      /> -->
     </section>
     <section class="growth flex-column justify-center align-center">
       <p>The business has grown exponentially; from a staff 25 to over 300</p>

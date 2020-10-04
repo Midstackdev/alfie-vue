@@ -41,7 +41,7 @@ function switchCarouselContent(direction) {
 const automateCarousel = () =>
   setInterval(() => switchCarouselContent("right"), 5000);
 carouselTimer = automateCarousel();
-
+console.log(carouselTimer);
 // CLIENTS FEEDBACK SECTION
 
 // Client feedbacks slider
