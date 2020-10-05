@@ -1,7 +1,7 @@
 <template>
   <section class="clientele">
     <h1 class="heading">WHO WE'VE WORKED WITH</h1>
-    <div class="client-logos flex-wrap align-center justify-center">
+    <div class="client-logos align-center justify-center">
       <picture>
         <source
           type="image/webp"
@@ -157,3 +157,20 @@ export default {
   mounted() {},
 };
 </script>
+
+
+<style lang="scss" scoped>
+.client-logos {
+  overflow-x: scroll !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+
+  picture {
+    display: inline-block !important;
+  }
+}
+</style>

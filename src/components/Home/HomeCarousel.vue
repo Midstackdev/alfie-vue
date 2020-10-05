@@ -40,39 +40,27 @@
         </span>
       </div>
       <div class="carousel-container">
-        <div class="content flex align-center justify-center active">
+        <div
+          class="content flex align-center justify-center"
+          :class="index ? 'active' : ''"
+          v-for="(list, index) in carouselItems"
+          :key="index"
+        >
           <picture>
-            <source
-              type="image/webp"
-              srcset="@/assets/images/alfie-home-cover.webp"
-            />
-            <source
-              type="image/jpeg"
-              srcset="@/assets/images/alfie-home-cover.jpeg"
-            />
-            <img
-              src="@/assets/images/alfie-home-cover.jpeg"
-              alt="banner image"
-            />
+            <source type="image/jpg" :srcset="list.image" />
+            <img :src="list.image" alt="banner image" />
           </picture>
           <div class="info flex align-center justify-center">
-            <h4 class="caption">We Define Fashion in Africa and Beyond</h4>
+            <h4 class="caption">{{ list.caption }}</h4>
           </div>
         </div>
-        <div class="content flex align-center justify-center">
+        <!-- <div class="content flex align-center justify-center">
           <picture>
             <source
-              type="image/webp"
-              srcset="@/assets/images/alfie-home-cover-2.webp"
+              type="image/jpg"
+              srcset="@/assets/images/scrubs/scrub2.jpg"
             />
-            <source
-              type="image/jpeg"
-              srcset="@/assets/images/alfie-home-cover-2.jpeg"
-            />
-            <img
-              src="@/assets/images/alfie-home-cover-2.jpeg"
-              alt="banner image"
-            />
+            <img src="@/assets/images/scrubs/scrub2.jpg" alt="banner image" />
           </picture>
           <div class="info flex align-center justify-center">
             <h4 class="caption">We offer quality in masses</h4>
@@ -81,22 +69,15 @@
         <div class="content flex align-center justify-center">
           <picture>
             <source
-              type="image/webp"
-              srcset="@/assets/images/alfie-home-cover-3.webp"
+              type="image/jpg"
+              srcset="@/assets/images/scrubs/scrub3.jpg"
             />
-            <source
-              type="image/jpeg"
-              srcset="@/assets/images/alfie-home-cover-3.jpeg"
-            />
-            <img
-              src="@/assets/images/alfie-home-cover-3.jpeg"
-              alt="banner image"
-            />
+            <img src="@/assets/images/scrubs/scrub3.jpg" alt="banner image" />
           </picture>
           <div class="info flex align-center justify-center">
             <h4 class="caption">We are the definition of fashion</h4>
           </div>
-        </div>
+        </div> -->
       </div>
       <div class="indicator-bars flex justify-center">
         <span class="bar active"></span>
@@ -106,3 +87,29 @@
     </div>
   </main>
 </template>
+
+
+<script>
+export default {
+  data() {
+    return {
+      carouselItems: [
+        {
+          caption: "We Define Fashion in Africa and Beyond",
+          image: require("../../assets/images/scrubs/scrub5.jpg"),
+        },
+        {
+          caption: "We offer quality in masses",
+
+          image: require("../../assets/images/scrubs/scrub8.jpg"),
+        },
+        {
+          caption: "We are the definition of fashion",
+
+          image: require("../../assets/images/scrubs/scrub7.jpg"),
+        },
+      ],
+    };
+  },
+};
+</script>

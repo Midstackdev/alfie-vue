@@ -42,12 +42,12 @@ export default {
         {
           name: "Mass Production",
           link: "/mass",
-          image: require("../../assets/images/decoratives/alfie-ch-1.png"),
+          image: require("../../assets/images/scrubs/scrub3.jpg"),
         },
         {
           name: "Retail",
           link: "/product",
-          image: require("../../assets/images/decoratives/alfie-ch-2.png"),
+          image: require("../../assets/images/scrubs/scrub4.jpg"),
         },
       ],
     };

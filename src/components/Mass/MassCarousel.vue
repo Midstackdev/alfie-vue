@@ -45,7 +45,7 @@
       />
     </div>
     <a href="#sgi-1" id="sgich"></a>
-    <p class="slideshow-caption">Our people doing what they love</p>
+    <h4 class="slideshow-caption">Our people doing what they love</h4>
     <div class="slideshow-gallery">
       <img
         src="@/assets/images/production/mp-img-1.jpg"
@@ -96,3 +96,9 @@
     </div>
   </section>
 </template>
+
+
+<script>
+// require("@/assets/js/main.js");
+export default {};
+</script>
