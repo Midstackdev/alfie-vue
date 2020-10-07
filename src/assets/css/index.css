@@ -132,7 +132,7 @@ main .header {
 .carousel-container .content picture img {
   width: inherit;
   height: inherit;
-  object-fit: cover;
+  /* object-fit: cover; */
 }
 
 .carousel-container .content .info {

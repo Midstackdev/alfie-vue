@@ -19,6 +19,7 @@ export default {
     ContactForm,
     BaseContact,
   },
+  methods: {},
 };
 </script>
 

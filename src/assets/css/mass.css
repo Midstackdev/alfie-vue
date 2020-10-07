@@ -13,7 +13,7 @@ main .banner {
 
 .slideshow .active-slideshow-image .slideshow-buttons .icon.button {
   position: absolute;
-  --size: 30px;
+  --size: 20px;
   --x: 0;
   top: calc(50% - var(--size) / 2);
   cursor: pointer;
@@ -50,7 +50,7 @@ main .banner {
 }
 
 .slideshow .active-slideshow-image img {
-  --w: min(80%, 810px);
+  --w: min(50%, 610px);
   width: var(--w);
   height: calc(var(--w) / 3);
   align-self: center;
