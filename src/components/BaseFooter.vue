@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <section class="quick-links flex-wrap justify-center">
+    <section class="quick-links flex-wrap text-left">
       <div class="column help flex-column">
         <p class="title">HELP CENTER</p>
         <p>
