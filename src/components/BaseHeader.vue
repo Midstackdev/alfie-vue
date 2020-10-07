@@ -70,8 +70,8 @@
         </a>
       </div>
     </div>
-    <nav class="navigation collapsed">
-      <ul>
+    <nav class="navigation collapsed py-3">
+      <ul class="mb-0">
         <li>
           <a href="/" :class="this.$route.path == '/' ? 'active' : ''">Home</a>
         </li>
@@ -112,21 +112,29 @@
   </div>
 </template>
 
+
 <script>
-export default {};
+/* eslint-disable */
+export default {
+  mounted() {
+    // responsive navigation handler
+    const navigation = document.querySelector(".navigation");
+
+    document.querySelector(".icon.hamburger").addEventListener("click", () => {
+      navigation.classList.replace("collapsed", "expanded");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.classList.contains("hamburger")) {
+        navigation.classList.replace("expanded", "collapsed");
+      }
+    });
+
+    // FORMS AND SUBMIT HANDLERS
+    // Sign up form
+    document.querySelector(".sign-up form").onsubmit = (event) => {
+      event.preventDefault();
+    };
+  },
+};
 </script>
-
-<style lang="scss" scoped>
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.a-exact-active {
-  color: #42b983;
-}
-</style>

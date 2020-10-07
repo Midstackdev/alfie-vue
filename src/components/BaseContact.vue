@@ -16,14 +16,15 @@
           rows="10"
           v-model="message"
         ></textarea>
-        <input type="submit" value="Send" />
+        <input type="submit" @click.prevent="sendEmail" value="Send" />
       </form>
     </section>
   </footer>
 </template>
 
+
 <script>
-import { Email } from "@/assets/js/smtp.js";
+/* eslint-disable */
 export default {
   data() {
     return {
@@ -35,11 +36,11 @@ export default {
     async sendEmail() {
       try {
         var message = await Email.send({
-          Host: "smtp.gmail.com",
+          SecureToken: "425562e1-92fd-4b1e-b63d-214263ab6211",
           To: "pddadson@gmail.com",
           From: this.email,
-          Subject: "Hello world",
-          Body: this.message,
+          Subject: "This is the subject",
+          Body: this.email,
         });
         console.log(message);
       } catch (error) {
