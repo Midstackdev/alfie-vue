@@ -177,3 +177,12 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+@media only screen and (max-width: 600px) {
+  .products-container {
+    align-content: center;
+    justify-content: center;
+  }
+}
+</style>

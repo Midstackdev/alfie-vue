@@ -113,13 +113,25 @@ export default {
         left: [
           "ctr",
           "ltc",
-          feedback.previousElementSibling,
-          activeBar.previousElementSibling,
+          `${
+            feedback.previousElementSibling
+              ? feedback.previousElementSibling
+              : allFeedbacks[0].previousElementSibling
+          }`,
+          `${
+            activeBar.previousElementSibling
+              ? activeBar.previousElementSibling
+              : allFeedbacks[0].previousElementSibling
+          }`,
         ],
         right: [
           "ctl",
           "rtc",
-          feedback.nextElementSibling,
+          `${
+            feedback.nextElementSibling
+              ? feedback.nextElementSibling
+              : allFeedbacks[0].nextElementSibling
+          }`,
           activeBar.nextElementSibling,
         ],
       }[direction];

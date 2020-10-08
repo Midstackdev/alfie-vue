@@ -1,10 +1,12 @@
 <template>
   <section class="container-fluid">
     <div class="row m-0 align-items-center justify-content-center">
-      <div class="col-4 text-right">
-        <h4 class="slideshow-caption">Our people doing what they love</h4>
+      <div class="col-md-4">
+        <h4 class="slideshow-caption mt-3 mb-0">
+          Our people doing what they love
+        </h4>
       </div>
-      <div class="col-8 slideshow flex-column align-center m-0">
+      <div class="col-md-8 slideshow flex-column align-center m-0">
         <div class="active-slideshow-image flex align-center justify-center">
           <div class="slideshow-buttons">
             <span class="icon button left">
