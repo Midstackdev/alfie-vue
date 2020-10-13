@@ -25,82 +25,177 @@
         </div>
       </div>
     </section>
-    <section class="clients-feedback pb-0 px-0 px-md-5">
+    <section class="clients-feedback">
       <h1 class="heading">What our clients say</h1>
-      <div id="testim" class="testim">
-        <div class="testim-cover">
-          <div class="wrap px-2 px-md-5">
-            <span
-              id="right-arrow"
-              class="arrow right fa fa-chevron-right"
-            ></span>
-            <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
-            <ul id="testim-dots" class="dots">
-              <li class="dot active"></li>
-              <!--
-                    -->
-              <li class="dot"></li>
-              <!--
-                    -->
-              <li class="dot"></li>
-              <!--
-                    -->
-            </ul>
-            <div id="testim-content" class="cont">
-              <div class="active">
-                <div class="img">
-                  <img
-                    src="../../assets/images/Image-6.png"
-                    alt="client image"
-                  />
-                </div>
-                <div class="details mb-3">
-                  <h2 class="name mb-0">John Doe</h2>
-                  <h2 class="company m-0 text-dark" style="font-size: 12px">
-                    ABC Company Limited
-                  </h2>
-                </div>
-                <p class="feedback-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-              <div>
-                <div class="img">
-                  <img src="../../assets/images/ceo.png" alt="client image" />
-                </div>
-                <div class="details mb-3">
-                  <h2 class="name mb-0">Ruby Roundhouse</h2>
-                  <h2 class="company m-0 text-dark" style="font-size: 12px">
-                    XYZ Inc
-                  </h2>
-                </div>
-                <p class="feedback-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
-              </div>
-
-              <div>
-                <div class="img">
-                  <img
-                    src="../../assets/images/Image-4.png"
-                    alt="client image"
-                  />
-                </div>
-                <div class="details mb-3">
-                  <h2 class="name mb-0">Angela Ashton</h2>
-                  <h2 class="company m-0 text-dark" style="font-size: 12px">
-                    Milky Productions
-                  </h2>
-                </div>
-                <p class="feedback-text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+      <div class="feedback-container" id="feedback-container">
+        <!-- buttons and indicators will be absolutely positioned -->
+        <span class="icon button left" n="0">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53">
+            <g transform="translate(-0.348)">
+              <rect
+                class="a"
+                width="53"
+                height="53"
+                transform="translate(0.348)"
+              />
+              <path
+                class="b"
+                d="M36.421,50.093l2.219-2.219L17.189,26.421,38.641,4.969,36.421,2.75,12.75,26.421Z"
+                transform="translate(0.814 0.176)"
+              />
+              <rect
+                class="a"
+                width="53"
+                height="53"
+                transform="translate(0.348)"
+              />
+            </g>
+          </svg>
+        </span>
+        <span class="icon button right" n="1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53">
+            <g transform="translate(53 53) rotate(180)">
+              <rect class="a" width="53" height="53" />
+              <path
+                class="b"
+                d="M23.671,47.343l2.219-2.219L4.439,23.671,25.891,2.219,23.671,0,0,23.671Z"
+                transform="translate(13.213 2.715)"
+              />
+              <rect class="a" width="53" height="53" />
+            </g>
+          </svg>
+        </span>
+        <!-- start of client feedbacks -->
+        <div class="mention flex-column align-center" id="m-0">
+          <p class="feedback-text">
+            Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+            laboriosam laborum veniam unde voluptate perspiciatis.
+          </p>
+          <div class="client-info flex align-center">
+            <picture>
+              <source type="image/webp" srcset="@/assets/images/Image-6.webp" />
+              <source type="image/png" srcset="@/assets/images/Image-6.png" />
+              <img
+                class="photo"
+                src="@/assets/images/Image-6.png"
+                alt="client image"
+              />
+            </picture>
+            <div class="details">
+              <p class="name">John Doe</p>
+              <p class="company">ABC Company Limited</p>
+            </div>
+          </div>
+        </div>
+        <div class="all-feedbacks" id="all-feedbacks">
+          <!-- when either buttons are clicked, a new feedback will be fetched from this container -->
+          <div class="flex-column align-center" id="cf-0">
+            <p class="feedback-text">
+              Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+              laboriosam laborum veniam unde voluptate perspiciatis.
+            </p>
+            <div class="client-info flex align-center">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="@/assets/images/Image-6.webp"
+                />
+                <source type="image/png" srcset="@/assets/images/Image-6.png" />
+                <img
+                  class="photo"
+                  src="@/assets/images/Image-6.png"
+                  alt="client image"
+                />
+              </picture>
+              <!-- <img src="@/assets/images/Image-6.webp" alt="client image" class="photo"> -->
+              <div class="details">
+                <p class="name">John Doe</p>
+                <p class="company">ABC Company Limited</p>
               </div>
             </div>
           </div>
+          <div class="flex-column align-center" id="cf-1">
+            <p class="feedback-text">
+              Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+              laboriosam laborum veniam unde voluptate perspiciatis.
+            </p>
+            <div class="client-info flex align-center">
+              <picture>
+                <source type="image/webp" srcset="@/assets/images/ceo.webp" />
+                <source type="image/png" srcset="@/assets/images/ceo.png" />
+                <img
+                  class="photo"
+                  src="@/assets/images/ceo.png"
+                  alt="client image"
+                />
+              </picture>
+              <!-- <img src="@/assets/images/ceo.webp" alt="client image" class="photo"> -->
+              <div class="details">
+                <p class="name">Ruby Roundhouse</p>
+                <p class="company">XYZ Inc</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-column align-center" id="cf-2">
+            <p class="feedback-text">
+              Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+              laboriosam laborum veniam unde voluptate perspiciatis.
+            </p>
+            <div class="client-info flex align-center">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="@/assets/images/Image-4.webp"
+                />
+                <source type="image/png" srcset="@/assets/images/Image-4.png" />
+                <img
+                  class="photo"
+                  src="@/assets/images/Image-4.png"
+                  alt="client image"
+                />
+              </picture>
+              <!-- <img src="@/assets/images/Image-4.webp" alt="client image" class="photo"> -->
+              <div class="details">
+                <p class="name">Angela Ashton</p>
+                <p class="company">Milky Productions</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex-column align-center" id="cf-3">
+            <p class="feedback-text">
+              Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
+              laboriosam laborum veniam unde voluptate perspiciatis.
+            </p>
+            <div class="client-info flex align-center">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="@/assets/images/products/men/alfie-m4.webp"
+                />
+                <source
+                  type="image/png"
+                  srcset="@/assets/images/products/men/alfie-m4.png"
+                />
+                <img
+                  class="photo"
+                  src="@/assets/images/products/men/alfie-m4.png"
+                  alt="client image"
+                />
+              </picture>
+              <!-- <img src="@/assets/images/products/men/alfie-m4.webp" alt="client image" class="photo"> -->
+              <div class="details">
+                <p class="name">Jason Woods</p>
+                <p class="company">Woodin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of feedbacks -->
+        <div class="indicator-bars flex justify-center">
+          <span class="bar active"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
       </div>
     </section>
@@ -112,730 +207,89 @@
 /* eslint-disable */
 export default {
   mounted() {
-    var testim = document.getElementById("testim"),
-      testimDots = Array.prototype.slice.call(
-        document.getElementById("testim-dots").children
-      ),
-      testimContent = Array.prototype.slice.call(
-        document.getElementById("testim-content").children
-      ),
-      testimLeftArrow = document.getElementById("left-arrow"),
-      testimRightArrow = document.getElementById("right-arrow"),
-      testimSpeed = 4500,
-      currentSlide = 0,
-      currentActive = 0,
-      testimTimer,
-      touchStartPos,
-      touchEndPos,
-      touchPosDiff,
-      ignoreTouch = 30;
-    window.onload = function () {
-      // Testim Script
-      function playSlide(slide) {
-        for (var k = 0; k < testimDots.length; k++) {
-          testimContent[k].classList.remove("active");
-          testimContent[k].classList.remove("inactive");
-          testimDots[k].classList.remove("active");
-        }
+    // CLIENTS FEEDBACK SECTION
 
-        if (slide < 0) {
-          slide = currentSlide = testimContent.length - 1;
-        }
+    // Client feedbacks slider
+    const sliderContainer = document.getElementById("feedback-container");
+    const sliderButtons = [...sliderContainer.getElementsByClassName("button")];
+    const sliderBars = sliderContainer.lastElementChild;
+    const allFeedbacks = document.getElementById("all-feedbacks").children;
+    sliderButtons.forEach((button) => {
+      button.addEventListener("click", ({ currentTarget }) => {
+        let direction = currentTarget.className.match(/left|right/gi).pop();
+        switchFeedback(direction);
+      });
+    });
 
-        if (slide > testimContent.length - 1) {
-          slide = currentSlide = 0;
-        }
-
-        if (currentActive != currentSlide) {
-          testimContent[currentActive].classList.add("inactive");
-        }
-        testimContent[slide].classList.add("active");
-        testimDots[slide].classList.add("active");
-
-        currentActive = currentSlide;
-
-        clearTimeout(testimTimer);
-        testimTimer = setTimeout(function () {
-          playSlide((currentSlide += 1));
-        }, testimSpeed);
+    function switchFeedback(direction) {
+      const currentFeedback = sliderContainer.querySelector(".mention");
+      const activeBar = sliderBars.querySelector(".active");
+      // xdr means exit direction (for element transition)
+      // ndr means entry direction (for element transition)
+      let [index, xdr, ndr, feedbackSibling, barSibling] = [
+        +currentFeedback.id.split("-").pop(),
+      ];
+      const feedback = allFeedbacks[index];
+      [xdr, ndr, feedbackSibling, barSibling] = {
+        left: [
+          "ctr",
+          "ltc",
+          feedback.previousElementSibling,
+          activeBar.previousElementSibling,
+        ],
+        right: [
+          "ctl",
+          "rtc",
+          feedback.nextElementSibling,
+          activeBar.nextElementSibling,
+        ],
+      }[direction];
+      // transition new feedback (feedbackToShow)'s entry ...
+      if (!feedbackSibling) {
+        // this will make the feedback section run like a full carousel
+        [feedbackSibling, barSibling] =
+          direction === "left"
+            ? [
+                allFeedbacks[allFeedbacks.length - 1],
+                sliderBars.children[sliderBars.children.length - 1],
+              ]
+            : [allFeedbacks[0], sliderBars.children[0]];
       }
-
-      testimLeftArrow.addEventListener("click", function () {
-        playSlide((currentSlide -= 1));
-      });
-
-      testimRightArrow.addEventListener("click", function () {
-        playSlide((currentSlide += 1));
-      });
-
-      for (var l = 0; l < testimDots.length; l++) {
-        testimDots[l].addEventListener("click", function () {
-          playSlide((currentSlide = testimDots.indexOf(this)));
-        });
+      if (feedbackSibling) {
+        activeBar.classList.remove("active");
+        barSibling.classList.add("active");
+        const feedbackToShow = feedbackSibling.cloneNode(true);
+        let { id } = feedbackToShow;
+        feedbackToShow.id = `m-${id.split("-").pop()}`;
+        ["mention", "is-entering-" + ndr].forEach((cls) =>
+          feedbackToShow.classList.add(cls)
+        );
+        // and current feedback's exit
+        currentFeedback.classList.add("is-leaving-" + xdr);
+        currentFeedback.ontransitionend = currentFeedback.oonwebkittransitionend = (
+          event
+        ) => {
+          if (event.propertyName === "opacity") {
+            const { parentNode } = event.target;
+            parentNode.replaceChild(feedbackToShow, event.target);
+            const entryAnimationDuration = window
+              .getComputedStyle(feedbackToShow)
+              .getPropertyValue("animation-duration");
+            setTimeout(
+              () => feedbackToShow.classList.remove("is-entering-" + ndr),
+              parseFloat(entryAnimationDuration) * 1e3
+            );
+          }
+        };
       }
+    }
 
-      playSlide(currentSlide);
+    // automatically slide through the client feedbacks
+    // setInterval(() => switchFeedback("right"), 3500);
 
-      // keyboard shortcuts
-      document.addEventListener("keyup", function (e) {
-        switch (e.keyCode) {
-          case 37:
-            testimLeftArrow.click();
-            break;
+    // ========================================================
 
-          case 39:
-            testimRightArrow.click();
-            break;
-
-          case 39:
-            testimRightArrow.click();
-            break;
-
-          default:
-            break;
-        }
-      });
-
-      testim.addEventListener("touchstart", function (e) {
-        touchStartPos = e.changedTouches[0].clientX;
-      });
-
-      testim.addEventListener("touchend", function (e) {
-        touchEndPos = e.changedTouches[0].clientX;
-
-        touchPosDiff = touchStartPos - touchEndPos;
-
-        console.log(touchPosDiff);
-        console.log(touchStartPos);
-        console.log(touchEndPos);
-
-        if (touchPosDiff > 0 + ignoreTouch) {
-          testimLeftArrow.click();
-        } else if (touchPosDiff < 0 - ignoreTouch) {
-          testimRightArrow.click();
-        } else {
-          return;
-        }
-      });
-    };
+    //
   },
 };
 </script>
-
-
-<style lang="scss" scoped>
-.clients-feedback {
-  max-height: 550px;
-}
-
-.testim {
-  width: 100%;
-  // position: absolute;
-  margin-top: 220px;
-  -webkit-transform: translatey(-50%);
-  -moz-transform: translatey(-50%);
-  -ms-transform: translatey(-50%);
-  -o-transform: translatey(-50%);
-  transform: translatey(-50%);
-}
-
-.testim .wrap {
-  // position: relative;
-  width: 100%;
-  // max-width: 1020px;
-  padding: 40px 20px;
-  // margin: auto;
-}
-
-.testim .arrow {
-  display: block;
-  position: absolute;
-  color: #333;
-  cursor: pointer;
-  font-size: 2em;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  padding: 5px;
-  z-index: 22222222;
-}
-
-.testim .arrow:before {
-  cursor: pointer;
-}
-
-.testim .arrow:hover {
-  color: #efa126;
-}
-
-.testim .arrow.left {
-  left: 70px;
-}
-
-.testim .arrow.right {
-  right: 70px;
-}
-
-.testim .dots {
-  text-align: center;
-  position: absolute;
-  width: 100%;
-  bottom: 60px;
-  left: 0;
-  display: block;
-  z-index: 3333;
-  height: 12px;
-}
-
-.testim .dots .dot {
-  list-style-type: none;
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1px solid #efa126;
-  margin: 0 10px;
-  cursor: pointer;
-  -webkit-transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  position: relative;
-}
-
-.testim .dots .dot.active,
-.testim .dots .dot:hover {
-  background: #efa126;
-  border-color: #efa126;
-}
-
-.testim .dots .dot.active {
-  -webkit-animation: testim-scale 0.5s ease-in-out forwards;
-  -moz-animation: testim-scale 0.5s ease-in-out forwards;
-  -ms-animation: testim-scale 0.5s ease-in-out forwards;
-  -o-animation: testim-scale 0.5s ease-in-out forwards;
-  animation: testim-scale 0.5s ease-in-out forwards;
-}
-
-.testim .cont {
-  position: relative;
-  overflow: hidden;
-}
-
-.testim .cont > div {
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 0 0 70px 0;
-  opacity: 0;
-}
-
-.testim .cont > div.inactive {
-  opacity: 1;
-}
-
-.testim .cont > div.active {
-  position: relative;
-  opacity: 1;
-}
-
-.testim .cont div .img img {
-  display: block;
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  border-radius: 50%;
-}
-
-.testim .cont div h2 {
-  color: #efa126;
-  font-size: 1em;
-  margin: 15px 0;
-}
-
-.testim .cont div p {
-  font-size: 1.15em;
-  color: #333;
-  width: 70%;
-  margin: auto;
-}
-
-.testim .cont div.active .img img {
-  -webkit-animation: testim-show 0.5s ease-in-out forwards;
-  -moz-animation: testim-show 0.5s ease-in-out forwards;
-  -ms-animation: testim-show 0.5s ease-in-out forwards;
-  -o-animation: testim-show 0.5s ease-in-out forwards;
-  animation: testim-show 0.5s ease-in-out forwards;
-}
-
-.testim .cont div.active h2 {
-  -webkit-animation: testim-content-in 0.4s ease-in-out forwards;
-  -moz-animation: testim-content-in 0.4s ease-in-out forwards;
-  -ms-animation: testim-content-in 0.4s ease-in-out forwards;
-  -o-animation: testim-content-in 0.4s ease-in-out forwards;
-  animation: testim-content-in 0.4s ease-in-out forwards;
-}
-
-.testim .cont div.active p {
-  -webkit-animation: testim-content-in 0.5s ease-in-out forwards;
-  -moz-animation: testim-content-in 0.5s ease-in-out forwards;
-  -ms-animation: testim-content-in 0.5s ease-in-out forwards;
-  -o-animation: testim-content-in 0.5s ease-in-out forwards;
-  animation: testim-content-in 0.5s ease-in-out forwards;
-}
-
-.testim .cont div.inactive .img img {
-  -webkit-animation: testim-hide 0.5s ease-in-out forwards;
-  -moz-animation: testim-hide 0.5s ease-in-out forwards;
-  -ms-animation: testim-hide 0.5s ease-in-out forwards;
-  -o-animation: testim-hide 0.5s ease-in-out forwards;
-  animation: testim-hide 0.5s ease-in-out forwards;
-}
-
-.testim .cont div.inactive h2 {
-  -webkit-animation: testim-content-out 0.4s ease-in-out forwards;
-  -moz-animation: testim-content-out 0.4s ease-in-out forwards;
-  -ms-animation: testim-content-out 0.4s ease-in-out forwards;
-  -o-animation: testim-content-out 0.4s ease-in-out forwards;
-  animation: testim-content-out 0.4s ease-in-out forwards;
-}
-
-.testim .cont div.inactive p {
-  -webkit-animation: testim-content-out 0.5s ease-in-out forwards;
-  -moz-animation: testim-content-out 0.5s ease-in-out forwards;
-  -ms-animation: testim-content-out 0.5s ease-in-out forwards;
-  -o-animation: testim-content-out 0.5s ease-in-out forwards;
-  animation: testim-content-out 0.5s ease-in-out forwards;
-}
-
-@-webkit-keyframes testim-scale {
-  0% {
-    -webkit-box-shadow: 0px 0px 0px 0px #eee;
-    box-shadow: 0px 0px 0px 0px #eee;
-  }
-
-  35% {
-    -webkit-box-shadow: 0px 0px 10px 5px #eee;
-    box-shadow: 0px 0px 10px 5px #eee;
-  }
-
-  70% {
-    -webkit-box-shadow: 0px 0px 10px 5px #ea830e;
-    box-shadow: 0px 0px 10px 5px #ea830e;
-  }
-
-  100% {
-    -webkit-box-shadow: 0px 0px 0px 0px #ea830e;
-    box-shadow: 0px 0px 0px 0px #ea830e;
-  }
-}
-
-@-moz-keyframes testim-scale {
-  0% {
-    -moz-box-shadow: 0px 0px 0px 0px #eee;
-    box-shadow: 0px 0px 0px 0px #eee;
-  }
-
-  35% {
-    -moz-box-shadow: 0px 0px 10px 5px #eee;
-    box-shadow: 0px 0px 10px 5px #eee;
-  }
-
-  70% {
-    -moz-box-shadow: 0px 0px 10px 5px #ea830e;
-    box-shadow: 0px 0px 10px 5px #ea830e;
-  }
-
-  100% {
-    -moz-box-shadow: 0px 0px 0px 0px #ea830e;
-    box-shadow: 0px 0px 0px 0px #ea830e;
-  }
-}
-
-@-ms-keyframes testim-scale {
-  0% {
-    -ms-box-shadow: 0px 0px 0px 0px #eee;
-    box-shadow: 0px 0px 0px 0px #eee;
-  }
-
-  35% {
-    -ms-box-shadow: 0px 0px 10px 5px #eee;
-    box-shadow: 0px 0px 10px 5px #eee;
-  }
-
-  70% {
-    -ms-box-shadow: 0px 0px 10px 5px #ea830e;
-    box-shadow: 0px 0px 10px 5px #ea830e;
-  }
-
-  100% {
-    -ms-box-shadow: 0px 0px 0px 0px #ea830e;
-    box-shadow: 0px 0px 0px 0px #ea830e;
-  }
-}
-
-@-o-keyframes testim-scale {
-  0% {
-    -o-box-shadow: 0px 0px 0px 0px #eee;
-    box-shadow: 0px 0px 0px 0px #eee;
-  }
-
-  35% {
-    -o-box-shadow: 0px 0px 10px 5px #eee;
-    box-shadow: 0px 0px 10px 5px #eee;
-  }
-
-  70% {
-    -o-box-shadow: 0px 0px 10px 5px #ea830e;
-    box-shadow: 0px 0px 10px 5px #ea830e;
-  }
-
-  100% {
-    -o-box-shadow: 0px 0px 0px 0px #ea830e;
-    box-shadow: 0px 0px 0px 0px #ea830e;
-  }
-}
-
-@keyframes testim-scale {
-  0% {
-    box-shadow: 0px 0px 0px 0px #eee;
-  }
-
-  35% {
-    box-shadow: 0px 0px 10px 5px #eee;
-  }
-
-  70% {
-    box-shadow: 0px 0px 10px 5px #ea830e;
-  }
-
-  100% {
-    box-shadow: 0px 0px 0px 0px #ea830e;
-  }
-}
-
-@-webkit-keyframes testim-content-in {
-  from {
-    opacity: 0;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@-moz-keyframes testim-content-in {
-  from {
-    opacity: 0;
-    -moz-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@-ms-keyframes testim-content-in {
-  from {
-    opacity: 0;
-    -ms-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@-o-keyframes testim-content-in {
-  from {
-    opacity: 0;
-    -o-transform: translateY(100%);
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    -o-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes testim-content-in {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@-webkit-keyframes testim-content-out {
-  from {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  to {
-    opacity: 0;
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-}
-
-@-moz-keyframes testim-content-out {
-  from {
-    opacity: 1;
-    -moz-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  to {
-    opacity: 0;
-    -moz-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-}
-
-@-ms-keyframes testim-content-out {
-  from {
-    opacity: 1;
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  to {
-    opacity: 0;
-    -ms-transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-}
-
-@-o-keyframes testim-content-out {
-  from {
-    opacity: 1;
-    -o-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  to {
-    opacity: 0;
-    transform: translateY(-100%);
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes testim-content-out {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  to {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-}
-
-@-webkit-keyframes testim-show {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@-moz-keyframes testim-show {
-  from {
-    opacity: 0;
-    -moz-transform: scale(0);
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@-ms-keyframes testim-show {
-  from {
-    opacity: 0;
-    -ms-transform: scale(0);
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    -ms-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@-o-keyframes testim-show {
-  from {
-    opacity: 0;
-    -o-transform: scale(0);
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-}
-
-@keyframes testim-show {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@-webkit-keyframes testim-hide {
-  from {
-    opacity: 1;
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-}
-
-@-moz-keyframes testim-hide {
-  from {
-    opacity: 1;
-    -moz-transform: scale(1);
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    -moz-transform: scale(0);
-    transform: scale(0);
-  }
-}
-
-@-ms-keyframes testim-hide {
-  from {
-    opacity: 1;
-    -ms-transform: scale(1);
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    -ms-transform: scale(0);
-    transform: scale(0);
-  }
-}
-
-@-o-keyframes testim-hide {
-  from {
-    opacity: 1;
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    -o-transform: scale(0);
-    transform: scale(0);
-  }
-}
-
-@keyframes testim-hide {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(0);
-  }
-}
-
-@media all and (max-width: 300px) {
-  .wrap {
-  }
-  .testim .arrow.left {
-    left: 20px;
-  }
-
-  .testim .arrow.right {
-    right: 20px;
-  }
-  .testim .cont div p {
-    font-size: 1.15em;
-    color: #333;
-    width: 80%;
-    margin: auto;
-  }
-}
-
-@media all and (max-width: 500px) {
-  .testim .arrow {
-    font-size: 1.5em;
-  }
-
-  .testim .cont div p {
-    line-height: 25px;
-  }
-  .wrap {
-  }
-  .testim .arrow.left {
-    left: 10px;
-  }
-
-  .testim .arrow.right {
-    right: 10px;
-  }
-  .testim .cont div p {
-    font-size: 1.15em;
-    color: #333;
-    width: 80%;
-    margin: auto;
-  }
-}
-</style>
