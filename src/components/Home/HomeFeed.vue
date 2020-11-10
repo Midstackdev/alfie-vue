@@ -29,7 +29,7 @@
       <h1 class="heading">What our clients say</h1>
       <div class="feedback-container" id="feedback-container">
         <!-- buttons and indicators will be absolutely positioned -->
-        <span class="icon button left" n="0">
+        <span class="icon button left" n="0" @click="moveLeft">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53">
             <g transform="translate(-0.348)">
               <rect
@@ -52,7 +52,7 @@
             </g>
           </svg>
         </span>
-        <span class="icon button right" n="1">
+        <span class="icon button right" n="1" @click="moveRight">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 53 53">
             <g transform="translate(53 53) rotate(180)">
               <rect class="a" width="53" height="53" />
@@ -66,30 +66,34 @@
           </svg>
         </span>
         <!-- start of client feedbacks -->
-        <div class="mention flex-column align-center" id="m-0">
-          <p class="feedback-text">
-            Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
-            laboriosam laborum veniam unde voluptate perspiciatis.
-          </p>
-          <div class="client-info flex align-center">
-            <picture>
-              <source type="image/webp" srcset="@/assets/images/Image-6.webp" />
-              <source type="image/png" srcset="@/assets/images/Image-6.png" />
-              <img
-                class="photo"
-                src="@/assets/images/Image-6.png"
-                alt="client image"
-              />
-            </picture>
-            <div class="details">
-              <p class="name">John Doe</p>
-              <p class="company">ABC Company Limited</p>
+        <transition name="slide-fade">
+          <div class="mention flex-column align-center" id="m-0">
+            <p class="feedback-text">
+              {{ feedBacks[index].text }}
+            </p>
+            <div class="client-info flex align-center">
+              <picture>
+                <source
+                  type="image/webp"
+                  :srcset="feedBacks[index].imagewebp"
+                />
+                <source type="image/png" :srcset="feedBacks[index].imagenom" />
+                <img
+                  class="photo"
+                  :src="feedBacks[index].imagenom"
+                  alt="client image"
+                />
+              </picture>
+              <div class="details">
+                <p class="name">{{ feedBacks[index].name }}</p>
+                <p class="company">{{ feedBacks[index].company }}</p>
+              </div>
             </div>
           </div>
-        </div>
+        </transition>
         <div class="all-feedbacks" id="all-feedbacks">
           <!-- when either buttons are clicked, a new feedback will be fetched from this container -->
-          <div class="flex-column align-center" id="cf-0">
+          <!-- <div class="flex-column align-center" id="cf-0">
             <p class="feedback-text">
               Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
               laboriosam laborum veniam unde voluptate perspiciatis.
@@ -107,14 +111,14 @@
                   alt="client image"
                 />
               </picture>
-              <!-- <img src="@/assets/images/Image-6.webp" alt="client image" class="photo"> -->
+              <img src="@/assets/images/Image-6.webp" alt="client image" class="photo">
               <div class="details">
                 <p class="name">John Doe</p>
                 <p class="company">ABC Company Limited</p>
               </div>
             </div>
-          </div>
-          <div class="flex-column align-center" id="cf-1">
+          </div> -->
+          <!-- <div class="flex-column align-center" id="cf-1">
             <p class="feedback-text">
               Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
               laboriosam laborum veniam unde voluptate perspiciatis.
@@ -129,14 +133,14 @@
                   alt="client image"
                 />
               </picture>
-              <!-- <img src="@/assets/images/ceo.webp" alt="client image" class="photo"> -->
+              <img src="@/assets/images/ceo.webp" alt="client image" class="photo">
               <div class="details">
                 <p class="name">Ruby Roundhouse</p>
                 <p class="company">XYZ Inc</p>
               </div>
             </div>
-          </div>
-          <div class="flex-column align-center" id="cf-2">
+          </div> -->
+          <!-- <div class="flex-column align-center" id="cf-2">
             <p class="feedback-text">
               Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
               laboriosam laborum veniam unde voluptate perspiciatis.
@@ -154,14 +158,14 @@
                   alt="client image"
                 />
               </picture>
-              <!-- <img src="@/assets/images/Image-4.webp" alt="client image" class="photo"> -->
+              <img src="@/assets/images/Image-4.webp" alt="client image" class="photo">
               <div class="details">
                 <p class="name">Angela Ashton</p>
                 <p class="company">Milky Productions</p>
               </div>
             </div>
-          </div>
-          <div class="flex-column align-center" id="cf-3">
+          </div> -->
+          <!-- <div class="flex-column align-center" id="cf-3">
             <p class="feedback-text">
               Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit
               laboriosam laborum veniam unde voluptate perspiciatis.
@@ -182,21 +186,20 @@
                   alt="client image"
                 />
               </picture>
-              <!-- <img src="@/assets/images/products/men/alfie-m4.webp" alt="client image" class="photo"> -->
+              <img src="@/assets/images/products/men/alfie-m4.webp" alt="client image" class="photo">
               <div class="details">
                 <p class="name">Jason Woods</p>
                 <p class="company">Woodin</p>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
         <!-- end of feedbacks -->
-        <div class="indicator-bars flex justify-center">
+        <!-- <div class="indicator-bars flex justify-center">
           <span class="bar active"></span>
           <span class="bar"></span>
           <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
+        </div> -->
       </div>
     </section>
   </div>
@@ -206,90 +209,165 @@
 <script>
 /* eslint-disable */
 export default {
-  mounted() {
-    // CLIENTS FEEDBACK SECTION
-
-    // Client feedbacks slider
-    const sliderContainer = document.getElementById("feedback-container");
-    const sliderButtons = [...sliderContainer.getElementsByClassName("button")];
-    const sliderBars = sliderContainer.lastElementChild;
-    const allFeedbacks = document.getElementById("all-feedbacks").children;
-    sliderButtons.forEach((button) => {
-      button.addEventListener("click", ({ currentTarget }) => {
-        let direction = currentTarget.className.match(/left|right/gi).pop();
-        switchFeedback(direction);
-      });
-    });
-
-    function switchFeedback(direction) {
-      const currentFeedback = sliderContainer.querySelector(".mention");
-      const activeBar = sliderBars.querySelector(".active");
-      // xdr means exit direction (for element transition)
-      // ndr means entry direction (for element transition)
-      let [index, xdr, ndr, feedbackSibling, barSibling] = [
-        +currentFeedback.id.split("-").pop(),
-      ];
-      const feedback = allFeedbacks[index];
-      [xdr, ndr, feedbackSibling, barSibling] = {
-        left: [
-          "ctr",
-          "ltc",
-          feedback.previousElementSibling,
-          activeBar.previousElementSibling,
-        ],
-        right: [
-          "ctl",
-          "rtc",
-          feedback.nextElementSibling,
-          activeBar.nextElementSibling,
-        ],
-      }[direction];
-      // transition new feedback (feedbackToShow)'s entry ...
-      if (!feedbackSibling) {
-        // this will make the feedback section run like a full carousel
-        [feedbackSibling, barSibling] =
-          direction === "left"
-            ? [
-                allFeedbacks[allFeedbacks.length - 1],
-                sliderBars.children[sliderBars.children.length - 1],
-              ]
-            : [allFeedbacks[0], sliderBars.children[0]];
-      }
-      if (feedbackSibling) {
-        activeBar.classList.remove("active");
-        barSibling.classList.add("active");
-        const feedbackToShow = feedbackSibling.cloneNode(true);
-        let { id } = feedbackToShow;
-        feedbackToShow.id = `m-${id.split("-").pop()}`;
-        ["mention", "is-entering-" + ndr].forEach((cls) =>
-          feedbackToShow.classList.add(cls)
-        );
-        // and current feedback's exit
-        currentFeedback.classList.add("is-leaving-" + xdr);
-        currentFeedback.ontransitionend = currentFeedback.oonwebkittransitionend = (
-          event
-        ) => {
-          if (event.propertyName === "opacity") {
-            const { parentNode } = event.target;
-            parentNode.replaceChild(feedbackToShow, event.target);
-            const entryAnimationDuration = window
-              .getComputedStyle(feedbackToShow)
-              .getPropertyValue("animation-duration");
-            setTimeout(
-              () => feedbackToShow.classList.remove("is-entering-" + ndr),
-              parseFloat(entryAnimationDuration) * 1e3
-            );
-          }
-        };
-      }
-    }
-
-    // automatically slide through the client feedbacks
-    // setInterval(() => switchFeedback("right"), 3500);
-
-    // ========================================================
-
-    //
+  data() {
+    return {
+      index: 0,
+      feedBacks: [
+        {
+          text:
+            "Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit laboriosam laborum veniam unde voluptate perspiciatis.",
+          imagewebp: require("@/assets/images/Image-6.webp"),
+          imagenom: require("@/assets/images/Image-6.png"),
+          name: "John Doe",
+          company: "ABC Company Limited",
+        },
+        {
+          text:
+            "Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit laboriosam laborum veniam unde voluptate perspiciatis",
+          imagewebp: require("@/assets/images/ceo.webp"),
+          imagenom: require("@/assets/images/ceo.png"),
+          name: "Ruby Roundhouse",
+          company: "XYZ Inc",
+        },
+        {
+          text:
+            "Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit laboriosam laborum veniam unde voluptate perspiciatis.",
+          imagewebp: require("@/assets/images/Image-4.webp"),
+          imagenom: require("@/assets/images/Image-4.png"),
+          name: "Angela Ashton",
+          company: "Milky Productions",
+        },
+        {
+          text:
+            "Lorem, ipsum dolor sit amet consectetur, adipisicing elit. Impedit laboriosam laborum veniam unde voluptate perspiciatis.",
+          imagewebp: require("@/assets/images/products/men/alfie-m4.webp"),
+          imagenom: require("@/assets/images/products/men/alfie-m4.png"),
+          name: "Jason Woods",
+          company: "Woodin",
+        },
+      ],
+    };
   },
+  methods: {
+    moveLeft() {
+      if (this.index > 0) {
+        this.index--;
+      } else {
+        this.index = this.feedBacks.length - 1;
+      }
+    },
+    moveRight() {
+      let num = this.feedBacks.length - 1;
+      if (this.index < num) {
+        this.index++;
+      } else {
+        this.index = 0;
+      }
+    },
+  },
+  updated() {
+    setInterval(() => this.moveRight(), 3500);
+  },
+  // mounted() {
+  //   // CLIENTS FEEDBACK SECTION
+
+  //   // Client feedbacks slider
+  //   const sliderContainer = document.getElementById("feedback-container");
+  //   const sliderButtons = [...sliderContainer.getElementsByClassName("button")];
+  //   const sliderBars = sliderContainer.lastElementChild;
+  //   const allFeedbacks = document.getElementById("all-feedbacks").children;
+  //   sliderButtons.forEach((button) => {
+  //     button.addEventListener("click", ({ currentTarget }) => {
+  //       let direction = currentTarget.className.match(/left|right/gi).pop();
+  //       switchFeedback(direction);
+  //     });
+  //   });
+
+  //   function switchFeedback(direction) {
+  //     const currentFeedback = sliderContainer.querySelector(".mention");
+  //     const activeBar = sliderBars.querySelector(".active");
+  //     // xdr means exit direction (for element transition)
+  //     // ndr means entry direction (for element transition)
+  //     let [index, xdr, ndr, feedbackSibling, barSibling] = [
+  //       +currentFeedback.id.split("-").pop(),
+  //     ];
+  //     const feedback = allFeedbacks[index];
+  //     [xdr, ndr, feedbackSibling, barSibling] = {
+  //       left: [
+  //         "ctr",
+  //         "ltc",
+  //         feedback.previousElementSibling,
+  //         activeBar.previousElementSibling,
+  //       ],
+  //       right: [
+  //         "ctl",
+  //         "rtc",
+  //         feedback.nextElementSibling,
+  //         activeBar.nextElementSibling,
+  //       ],
+  //     }[direction];
+  //     // transition new feedback (feedbackToShow)'s entry ...
+  //     if (!feedbackSibling) {
+  //       // this will make the feedback section run like a full carousel
+  //       [feedbackSibling, barSibling] =
+  //         direction === "left"
+  //           ? [
+  //               allFeedbacks[allFeedbacks.length - 1],
+  //               sliderBars.children[sliderBars.children.length - 1],
+  //             ]
+  //           : [allFeedbacks[0], sliderBars.children[0]];
+  //     }
+  //     if (feedbackSibling) {
+  //       activeBar.classList.remove("active");
+  //       barSibling.classList.add("active");
+  //       const feedbackToShow = feedbackSibling.cloneNode(true);
+  //       let { id } = feedbackToShow;
+  //       feedbackToShow.id = `m-${id.split("-").pop()}`;
+  //       ["mention", "is-entering-" + ndr].forEach((cls) =>
+  //         feedbackToShow.classList.add(cls)
+  //       );
+  //       // and current feedback's exit
+  //       currentFeedback.classList.add("is-leaving-" + xdr);
+  //       currentFeedback.ontransitionend = currentFeedback.oonwebkittransitionend = (
+  //         event
+  //       ) => {
+  //         if (event.propertyName === "opacity") {
+  //           const { parentNode } = event.target;
+  //           parentNode.replaceChild(feedbackToShow, event.target);
+  //           const entryAnimationDuration = window
+  //             .getComputedStyle(feedbackToShow)
+  //             .getPropertyValue("animation-duration");
+  //           setTimeout(
+  //             () => feedbackToShow.classList.remove("is-entering-" + ndr),
+  //             parseFloat(entryAnimationDuration) * 1e3
+  //           );
+  //         }
+  //       };
+  //     }
+  //   }
+
+  //   // automatically slide through the client feedbacks
+  //   // setInterval(() => switchFeedback("right"), 3500);
+
+  //   // ========================================================
+
+  //   //
+  // },
 };
 </script>
+
+<style lang="scss" scoped>
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
+}
+</style>

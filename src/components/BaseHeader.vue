@@ -116,7 +116,7 @@
 <script>
 /* eslint-disable */
 export default {
-  mounted() {
+  updated() {
     // responsive navigation handler
     const navigation = document.querySelector(".navigation");
 

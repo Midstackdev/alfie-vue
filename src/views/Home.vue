@@ -32,7 +32,7 @@ export default {
       return routes.includes(this.$route.path);
     },
   },
-  mounted() {
+  updated() {
     // CAROUSEL
     const carousel = document.querySelector(".carousel");
     const [
