@@ -99,6 +99,26 @@
             alt="slideshow gallery image"
             id="sgi-9"
           />
+          <img
+            src="@/assets/images/production/mp-img-12.jpg"
+            alt="slideshow gallery image"
+            id="sgi-9"
+          />
+          <img
+            src="@/assets/images/production/mp-img-13.jpg"
+            alt="slideshow gallery image"
+            id="sgi-9"
+          />
+          <img
+            src="@/assets/images/production/mp-img-14.jpg"
+            alt="slideshow gallery image"
+            id="sgi-9"
+          />
+          <img
+            src="@/assets/images/production/mp-img-15.jpg"
+            alt="slideshow gallery image"
+            id="sgi-9"
+          />
         </div>
       </div>
     </div>
