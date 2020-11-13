@@ -60,7 +60,7 @@
               /></svg
           ></a>
         </div>
-        <a href="/" class="flex align-center">
+        <a href="#/" class="flex align-center">
           <picture>
             <source type="image/webp" srcset="../assets/logo.webp" />
             <source type="image/png" srcset="../assets/logo.png" />
@@ -73,35 +73,37 @@
     <nav class="navigation collapsed py-3">
       <ul class="mb-0">
         <li>
-          <a href="/" :class="this.$route.path == '/' ? 'active' : ''">Home</a>
+          <a href="#/" :class="this.$route.path == '/' ? 'active' : ''">Home</a>
         </li>
         <li>
-          <a href="/about" :class="this.$route.path == '/about' ? 'active' : ''"
+          <a
+            href="#/about"
+            :class="this.$route.path == '/about' ? 'active' : ''"
             >About Us</a
           >
         </li>
         <li>
           <a
-            href="/products"
+            href="#/products"
             :class="this.$route.path == '/products' ? 'active' : ''"
             >Products</a
           >
         </li>
         <li>
-          <a href="/mass" :class="this.$route.path == '/mass' ? 'active' : ''"
+          <a href="#/mass" :class="this.$route.path == '/mass' ? 'active' : ''"
             >Mass Production</a
           >
         </li>
         <li>
           <a
-            href="/social"
+            href="#/social"
             :class="this.$route.path == '/social' ? 'active' : ''"
             >Social Responsibility</a
           >
         </li>
         <li>
           <a
-            href="/contact"
+            href="#/contact"
             :class="this.$route.path == '/contact' ? 'active' : ''"
             >Contact</a
           >
@@ -116,7 +118,7 @@
 <script>
 /* eslint-disable */
 export default {
-  updated() {
+  mounted() {
     // responsive navigation handler
     const navigation = document.querySelector(".navigation");
 
