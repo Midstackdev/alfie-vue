@@ -246,6 +246,7 @@ export default {
           company: "Woodin",
         },
       ],
+      timing: null,
     };
   },
   methods: {
@@ -263,11 +264,12 @@ export default {
       } else {
         this.index = 0;
       }
+      // clearInterval(this.timing);
     },
   },
-  updated() {
-    setInterval(() => this.moveRight(), 3500);
-  },
+  // updated() {
+  //   this.timing = setInterval(() => this.moveRight(), 7000);
+  // },
   // mounted() {
   //   // CLIENTS FEEDBACK SECTION
 
